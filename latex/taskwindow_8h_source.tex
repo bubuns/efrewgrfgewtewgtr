@@ -1,0 +1,38 @@
+\doxysection{taskwindow.\+h}
+\hypertarget{taskwindow_8h_source}{}\label{taskwindow_8h_source}\index{C:/Users/User/Documents/GuiApp (2)/src/taskwindow.h@{C:/Users/User/Documents/GuiApp (2)/src/taskwindow.h}}
+\mbox{\hyperlink{taskwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TASKWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TASKWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_window}{TaskWindow}};}
+\DoxyCodeLine{00008\ \}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_window}{TaskWindow}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_task_window_addd531fe1ee3a3b45f545dc59401c8b4}{TaskWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_task_window_a11607c43214c828babb52265fa287275}{\string~TaskWindow}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ signals:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_aa212f86a9f466c55ddf8ad7983947452}{logoutClicked}}();\ \textcolor{comment}{//\ Сигнал\ для\ выхода}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_a5df442edfa67cfb59842035c04d75200}{on\_pushButtonSolveChord\_clicked}}();\ \textcolor{comment}{//\ Слот\ для\ кнопки\ "{}Solve\ Equation\ (Chord\ Method)"{}}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_a453238f803ba46cc14df6d879962bb67}{on\_pushButtonEmbedMessage\_clicked}}();\ \textcolor{comment}{//\ Слот\ для\ кнопки\ "{}Embed\ Message\ in\ Image"{}}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_a03c2753a56a027bcf882d85daee93191}{on\_pushButtonLogout\_clicked}}();\ \textcolor{comment}{//\ Слот\ для\ кнопки\ "{}Logout"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ Ui::TaskWindow\ *\mbox{\hyperlink{class_task_window_ad0dc0440561595c9d3d2dd797c71439f}{ui}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_task_window_a4b50eaf032bc64c92c638e75dc7aa235}{chordMethod}}(\textcolor{keywordtype}{double}\ (*func)(\textcolor{keywordtype}{double}),\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ tol);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_a60ae3ba21a7eb58e040d2daa6a2207c4}{embedMessageInImage}}(\textcolor{keyword}{const}\ QString\ \&inputImagePath,\ \textcolor{keyword}{const}\ QString\ \&message,\ \textcolor{keyword}{const}\ QString\ \&outputImagePath);}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TASKWINDOW\_H}}
+
+\end{DoxyCode}

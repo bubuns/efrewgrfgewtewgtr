@@ -1,0 +1,36 @@
+\doxysection{loginwindow.\+h}
+\hypertarget{loginwindow_8h_source}{}\label{loginwindow_8h_source}\index{C:/Users/User/Documents/GuiApp (2)/src/loginwindow.h@{C:/Users/User/Documents/GuiApp (2)/src/loginwindow.h}}
+\mbox{\hyperlink{loginwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LOGINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LOGINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_login_window}{LoginWindow}};}
+\DoxyCodeLine{00008\ \}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_login_window}{LoginWindow}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_login_window_aa4c04d26b299de00156bbf3c32b2a082}{LoginWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_login_window_a0c49fe788dcce29aa50e7d974e1ad158}{\string~LoginWindow}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ signals:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_a10c7b94abf87687a46e8ff8c78f33c00}{loginSuccessful}}();\ \textcolor{comment}{//\ Сигнал\ для\ успешного\ входа}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_ad797f6247bb6bd583e70c307ee93864d}{on\_pushButtonLogin\_clicked}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_ac53500c3780e0c7d9881bd0cd59d8081}{on\_pushButtonRegister\_clicked}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_a01c34915f9ac1d2f18547b62b7752568}{on\_pushButtonBack\_clicked}}();\ \textcolor{comment}{//\ Слот\ для\ кнопки\ "{}Back"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ Ui::LoginWindow\ *\mbox{\hyperlink{class_login_window_a583f5c7dda98acd3e65791101f9ff2a0}{ui}};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOGINWINDOW\_H}}
+
+\end{DoxyCode}

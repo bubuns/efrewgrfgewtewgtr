@@ -1,0 +1,41 @@
+\doxysection{C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{C:/Users/User/Documents/GuiApp (2)/src/main.cpp@{C:/Users/User/Documents/GuiApp (2)/src/main.cpp}}
+{\ttfamily \#include "{}mainwindow.\+h"{}}\newline
+{\ttfamily \#include $<$QApplication$>$}\newline
+{\ttfamily \#include "{}database.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function of program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Main function of program. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{QApplication\ a(argc,\ argv);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{class_database}{Database}}\&\ db\ =\ \mbox{\hyperlink{class_database_aa04e547554cc34fa4b6c5a9390021eab}{Database::getInstance}}();}
+\DoxyCodeLine{db.\mbox{\hyperlink{class_database_ae83f5078d3494a4ba20521284d7efe79}{open}}();}
+\DoxyCodeLine{db.\mbox{\hyperlink{class_database_a518d7be79639a9136489a7f8fc25adb8}{executeQuery}}(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ users\ (id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ username\ TEXT,\ password\ TEXT)"{}});}
+\DoxyCodeLine{db.\mbox{\hyperlink{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{close}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{class_main_window}{MainWindow}}\ w;}
+\DoxyCodeLine{w.show();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{return}\ a.exec();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

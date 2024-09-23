@@ -1,0 +1,202 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{class_main_window}{}\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em This is the constructor for the \doxylink{class_main_window}{Main\+Window} class, which is a subclass of QMain\+Window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\texorpdfstring{$\sim$}{\string~}\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the \doxylink{class_main_window}{Main\+Window} class. It deletes the UI object and checks if the login\+Window, task\+Window, and register\+Window member variables are not nullptr.\+If they are not nullptr, it deletes them as well. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_afde5d3401fd16f50d7f5c812bcc632f7}{show\+Login\+Window}} ()
+\begin{DoxyCompactList}\small\item\em It checks if the login\+Window member variable is nullptr. If it is, it creates a new \doxylink{class_login_window}{Login\+Window} object and connects the login\+Successful signal from the \doxylink{class_login_window}{Login\+Window} to the show\+Task\+Window function in the \doxylink{class_main_window}{Main\+Window}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a5902a74a46441a6f204c5051801c6e8b}{show\+Task\+Window}} ()
+\begin{DoxyCompactList}\small\item\em It checks if the task\+Window member variable is nullptr. If it is, it creates a new \doxylink{class_task_window}{Task\+Window} object and connects the logout\+Clicked signal from the \doxylink{class_task_window}{Task\+Window} to the show function in the \doxylink{class_main_window}{Main\+Window}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a5a1eeb326fb9d539498dc66e8289d1ce}{show\+Register\+Window}} ()
+\begin{DoxyCompactList}\small\item\em It checks if the register\+Window member variable is nullptr. If it is, it creates a new \doxylink{class_register_window}{Register\+Window} object and connects the registration\+Successful and destroyed signals from the \doxylink{class_register_window}{Register\+Window} to the show function in the \doxylink{class_main_window}{Main\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Main\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}}
+\item 
+\mbox{\hyperlink{class_login_window}{Login\+Window}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{login\+Window}}
+\item 
+\mbox{\hyperlink{class_task_window}{Task\+Window}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}{task\+Window}}
+\item 
+\mbox{\hyperlink{class_register_window}{Register\+Window}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{register\+Window}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_a996c5a2b6f77944776856f08ec30858d} 
+Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+This is the constructor for the \doxylink{class_main_window}{Main\+Window} class, which is a subclass of QMain\+Window. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow::MainWindow}}(QWidget\ *parent)\ :}
+\DoxyCodeLine{QMainWindow(parent),}
+\DoxyCodeLine{\mbox{\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}}(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_main_window}{MainWindow}}),}
+\DoxyCodeLine{\mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}}(nullptr),}
+\DoxyCodeLine{\mbox{\hyperlink{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}{taskWindow}}(nullptr),}
+\DoxyCodeLine{\mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{registerWindow}}(nullptr)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ connect(ui-\/>pushButtonLogin,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_main_window_afde5d3401fd16f50d7f5c812bcc632f7}{MainWindow::showLoginWindow}});}
+\DoxyCodeLine{\ \ \ \ connect(ui-\/>pushButtonRegister,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_main_window_a5a1eeb326fb9d539498dc66e8289d1ce}{MainWindow::showRegisterWindow}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\index{MainWindow@{MainWindow}!````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}}
+\index{````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainWindow()}{\string~MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7} 
+Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This is the destructor for the \doxylink{class_main_window}{Main\+Window} class. It deletes the UI object and checks if the login\+Window, task\+Window, and register\+Window member variables are not nullptr.\+If they are not nullptr, it deletes them as well. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{MainWindow::\string~MainWindow}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}{taskWindow}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}{taskWindow}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{registerWindow}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{registerWindow}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_window_afde5d3401fd16f50d7f5c812bcc632f7}\index{MainWindow@{MainWindow}!showLoginWindow@{showLoginWindow}}
+\index{showLoginWindow@{showLoginWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{showLoginWindow}{showLoginWindow}}
+{\footnotesize\ttfamily \label{class_main_window_afde5d3401fd16f50d7f5c812bcc632f7} 
+void Main\+Window\+::show\+Login\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It checks if the login\+Window member variable is nullptr. If it is, it creates a new \doxylink{class_login_window}{Login\+Window} object and connects the login\+Successful signal from the \doxylink{class_login_window}{Login\+Window} to the show\+Task\+Window function in the \doxylink{class_main_window}{Main\+Window}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_afde5d3401fd16f50d7f5c812bcc632f7}{MainWindow::showLoginWindow}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_login_window}{LoginWindow}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ connect(\mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}},\ \&\mbox{\hyperlink{class_login_window_a10c7b94abf87687a46e8ff8c78f33c00}{LoginWindow::loginSuccessful}},\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_main_window_a5902a74a46441a6f204c5051801c6e8b}{MainWindow::showTaskWindow}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}}-\/>show();}
+\DoxyCodeLine{\ \ \ \ this-\/>hide();\ \textcolor{comment}{//\ Скрываем\ главное\ окно}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_main_window_a5a1eeb326fb9d539498dc66e8289d1ce}\index{MainWindow@{MainWindow}!showRegisterWindow@{showRegisterWindow}}
+\index{showRegisterWindow@{showRegisterWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{showRegisterWindow}{showRegisterWindow}}
+{\footnotesize\ttfamily \label{class_main_window_a5a1eeb326fb9d539498dc66e8289d1ce} 
+void Main\+Window\+::show\+Register\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It checks if the register\+Window member variable is nullptr. If it is, it creates a new \doxylink{class_register_window}{Register\+Window} object and connects the registration\+Successful and destroyed signals from the \doxylink{class_register_window}{Register\+Window} to the show function in the \doxylink{class_main_window}{Main\+Window}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a5a1eeb326fb9d539498dc66e8289d1ce}{MainWindow::showRegisterWindow}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{registerWindow}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{registerWindow}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_register_window}{RegisterWindow}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ connect(\mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{registerWindow}},\ \&\mbox{\hyperlink{class_register_window_af1795d38d22db48e37ed859ca17873f4}{RegisterWindow::registrationSuccessful}},\ \textcolor{keyword}{this},\ \&MainWindow::show);\ \textcolor{comment}{//\ Показываем\ главное\ окно\ после\ успешной\ регистрации}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ connect(\mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{registerWindow}},\ \&RegisterWindow::destroyed,\ \textcolor{keyword}{this},\ \&MainWindow::show);\ \textcolor{comment}{//\ Показываем\ главное\ окно\ после\ закрытия\ окна\ регистрации}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}{registerWindow}}-\/>show();}
+\DoxyCodeLine{\ \ \ \ this-\/>hide();\ \textcolor{comment}{//\ Скрываем\ главное\ окно}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_main_window_a5902a74a46441a6f204c5051801c6e8b}\index{MainWindow@{MainWindow}!showTaskWindow@{showTaskWindow}}
+\index{showTaskWindow@{showTaskWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{showTaskWindow}{showTaskWindow}}
+{\footnotesize\ttfamily \label{class_main_window_a5902a74a46441a6f204c5051801c6e8b} 
+void Main\+Window\+::show\+Task\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+It checks if the task\+Window member variable is nullptr. If it is, it creates a new \doxylink{class_task_window}{Task\+Window} object and connects the logout\+Clicked signal from the \doxylink{class_task_window}{Task\+Window} to the show function in the \doxylink{class_main_window}{Main\+Window}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a5902a74a46441a6f204c5051801c6e8b}{MainWindow::showTaskWindow}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}{taskWindow}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}{taskWindow}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_task_window}{TaskWindow}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ connect(\mbox{\hyperlink{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}{taskWindow}},\ \&\mbox{\hyperlink{class_task_window_aa212f86a9f466c55ddf8ad7983947452}{TaskWindow::logoutClicked}},\ \textcolor{keyword}{this},\ \&MainWindow::show);\ \textcolor{comment}{//\ Показываем\ главное\ окно\ после\ закрытия\ окна\ задач}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}{taskWindow}}-\/>show();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}{loginWindow}}-\/>close();\ \textcolor{comment}{//\ Закрываем\ окно\ входа}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_window_a5c013b5ca0c7819bf62613b828f4f503}\index{MainWindow@{MainWindow}!loginWindow@{loginWindow}}
+\index{loginWindow@{loginWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loginWindow}{loginWindow}}
+{\footnotesize\ttfamily \label{class_main_window_a5c013b5ca0c7819bf62613b828f4f503} 
+\mbox{\hyperlink{class_login_window}{Login\+Window}}\texorpdfstring{$\ast$}{*} Main\+Window\+::login\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7}\index{MainWindow@{MainWindow}!registerWindow@{registerWindow}}
+\index{registerWindow@{registerWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{registerWindow}{registerWindow}}
+{\footnotesize\ttfamily \label{class_main_window_ab5919214ed7eeb8c52a08c7bc7300cf7} 
+\mbox{\hyperlink{class_register_window}{Register\+Window}}\texorpdfstring{$\ast$}{*} Main\+Window\+::register\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562}\index{MainWindow@{MainWindow}!taskWindow@{taskWindow}}
+\index{taskWindow@{taskWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{taskWindow}{taskWindow}}
+{\footnotesize\ttfamily \label{class_main_window_ae5b4e4fd90d2c62269521fd36c0c8562} 
+\mbox{\hyperlink{class_task_window}{Task\+Window}}\texorpdfstring{$\ast$}{*} Main\+Window\+::task\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}\index{MainWindow@{MainWindow}!ui@{ui}}
+\index{ui@{ui}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \label{class_main_window_a35466a70ed47252a0191168126a352a5} 
+Ui\+::\+Main\+Window\texorpdfstring{$\ast$}{*} Main\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

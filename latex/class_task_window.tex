@@ -1,0 +1,229 @@
+\doxysection{Task\+Window Class Reference}
+\hypertarget{class_task_window}{}\label{class_task_window}\index{TaskWindow@{TaskWindow}}
+
+
+{\ttfamily \#include $<$taskwindow.\+h$>$}
+
+Inheritance diagram for Task\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_task_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_task_window_aa212f86a9f466c55ddf8ad7983947452}{logout\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_window_addd531fe1ee3a3b45f545dc59401c8b4}{Task\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em This is the constructor for the \doxylink{class_task_window}{Task\+Window} class, which is a subclass of QWidget. It initializes the user interface(\+UI) components using the ui-\/\texorpdfstring{$>$}{>}setup\+Ui(this) function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_window_a11607c43214c828babb52265fa287275}{\texorpdfstring{$\sim$}{\string~}\+Task\+Window}} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the \doxylink{class_task_window}{Task\+Window} class. It deletes the ui object and prints a debug message indicating that the \doxylink{class_task_window}{Task\+Window} has been destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_task_window_a5df442edfa67cfb59842035c04d75200}{on\+\_\+push\+Button\+Solve\+Chord\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em This function is called when the "{}\+Solve Chord"{} button is clicked. It prompts the user to enter the values of a, b, and the tolerance for the chord method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_window_a453238f803ba46cc14df6d879962bb67}{on\+\_\+push\+Button\+Embed\+Message\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em This function is called when the "{}\+Embed Message"{} button is clicked. It prompts the user to select an image file, enter a message, and choose a location to save the output image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_window_a03c2753a56a027bcf882d85daee93191}{on\+\_\+push\+Button\+Logout\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em This function is called when the "{}\+Logout"{} button is clicked. It emits a logout\+Clicked signal, which can be used by other parts of the application to handle the logout event. It then closes the \doxylink{class_task_window}{Task\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_task_window_a4b50eaf032bc64c92c638e75dc7aa235}{chord\+Method}} (double(\texorpdfstring{$\ast$}{*}func)(double), double a, double b, double tol)
+\item 
+void \mbox{\hyperlink{class_task_window_a60ae3ba21a7eb58e040d2daa6a2207c4}{embed\+Message\+In\+Image}} (const QString \&input\+Image\+Path, const QString \&message, const QString \&output\+Image\+Path)
+\begin{DoxyCompactList}\small\item\em This function is a wrapper for the actual embed\+Message\+In\+Image function, which is not shown in the provided code. It takes the input image path, the message to be embedded, and the output image path as parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Task\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_task_window_ad0dc0440561595c9d3d2dd797c71439f}{ui}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_window_addd531fe1ee3a3b45f545dc59401c8b4}\index{TaskWindow@{TaskWindow}!TaskWindow@{TaskWindow}}
+\index{TaskWindow@{TaskWindow}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{TaskWindow()}{TaskWindow()}}
+{\footnotesize\ttfamily \label{class_task_window_addd531fe1ee3a3b45f545dc59401c8b4} 
+Task\+Window\+::\+Task\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+This is the constructor for the \doxylink{class_task_window}{Task\+Window} class, which is a subclass of QWidget. It initializes the user interface(\+UI) components using the ui-\/\texorpdfstring{$>$}{>}setup\+Ui(this) function. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_task_window_addd531fe1ee3a3b45f545dc59401c8b4}{TaskWindow::TaskWindow}}(QWidget\ *parent)\ :}
+\DoxyCodeLine{QWidget(parent),}
+\DoxyCodeLine{\mbox{\hyperlink{class_task_window_ad0dc0440561595c9d3d2dd797c71439f}{ui}}(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_task_window}{TaskWindow}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}TaskWindow\ setupUi\ called"{}};}
+\DoxyCodeLine{\ \ \ \ connect(ui-\/>pushButtonSolveChord,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_task_window_a5df442edfa67cfb59842035c04d75200}{TaskWindow::on\_pushButtonSolveChord\_clicked}});}
+\DoxyCodeLine{\ \ \ \ connect(ui-\/>pushButtonEmbedMessage,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_task_window_a453238f803ba46cc14df6d879962bb67}{TaskWindow::on\_pushButtonEmbedMessage\_clicked}});}
+\DoxyCodeLine{\ \ \ \ connect(ui-\/>pushButtonLogout,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_task_window_a03c2753a56a027bcf882d85daee93191}{TaskWindow::on\_pushButtonLogout\_clicked}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_task_window_a11607c43214c828babb52265fa287275}\index{TaskWindow@{TaskWindow}!````~TaskWindow@{\texorpdfstring{$\sim$}{\string~}TaskWindow}}
+\index{````~TaskWindow@{\texorpdfstring{$\sim$}{\string~}TaskWindow}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TaskWindow()}{\string~TaskWindow()}}
+{\footnotesize\ttfamily \label{class_task_window_a11607c43214c828babb52265fa287275} 
+Task\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Task\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This is the destructor for the \doxylink{class_task_window}{Task\+Window} class. It deletes the ui object and prints a debug message indicating that the \doxylink{class_task_window}{Task\+Window} has been destroyed. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_task_window_a11607c43214c828babb52265fa287275}{TaskWindow::\string~TaskWindow}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_task_window_ad0dc0440561595c9d3d2dd797c71439f}{ui}};}
+\DoxyCodeLine{\ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}TaskWindow\ destroyed"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_window_a4b50eaf032bc64c92c638e75dc7aa235}\index{TaskWindow@{TaskWindow}!chordMethod@{chordMethod}}
+\index{chordMethod@{chordMethod}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{chordMethod()}{chordMethod()}}
+{\footnotesize\ttfamily \label{class_task_window_a4b50eaf032bc64c92c638e75dc7aa235} 
+double Task\+Window\+::chord\+Method (\begin{DoxyParamCaption}\item[{double(\texorpdfstring{$\ast$}{*}}]{func~}{)(double), }\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{tol}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_task_window_a60ae3ba21a7eb58e040d2daa6a2207c4}\index{TaskWindow@{TaskWindow}!embedMessageInImage@{embedMessageInImage}}
+\index{embedMessageInImage@{embedMessageInImage}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{embedMessageInImage()}{embedMessageInImage()}}
+{\footnotesize\ttfamily \label{class_task_window_a60ae3ba21a7eb58e040d2daa6a2207c4} 
+void Task\+Window\+::embed\+Message\+In\+Image (\begin{DoxyParamCaption}\item[{const QString \&}]{input\+Image\+Path}{, }\item[{const QString \&}]{message}{, }\item[{const QString \&}]{output\+Image\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This function is a wrapper for the actual embed\+Message\+In\+Image function, which is not shown in the provided code. It takes the input image path, the message to be embedded, and the output image path as parameters. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_a60ae3ba21a7eb58e040d2daa6a2207c4}{TaskWindow::embedMessageInImage}}(\textcolor{keyword}{const}\ QString\ \&inputImagePath,\ \textcolor{keyword}{const}\ QString\ \&message,\ \textcolor{keyword}{const}\ QString\ \&outputImagePath)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_task_window_a60ae3ba21a7eb58e040d2daa6a2207c4}{::embedMessageInImage}}(inputImagePath.toStdString(),\ message.toStdString(),\ outputImagePath.toStdString());}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_task_window_aa212f86a9f466c55ddf8ad7983947452}\index{TaskWindow@{TaskWindow}!logoutClicked@{logoutClicked}}
+\index{logoutClicked@{logoutClicked}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{logoutClicked}{logoutClicked}}
+{\footnotesize\ttfamily \label{class_task_window_aa212f86a9f466c55ddf8ad7983947452} 
+void Task\+Window\+::logout\+Clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_task_window_a453238f803ba46cc14df6d879962bb67}\index{TaskWindow@{TaskWindow}!on\_pushButtonEmbedMessage\_clicked@{on\_pushButtonEmbedMessage\_clicked}}
+\index{on\_pushButtonEmbedMessage\_clicked@{on\_pushButtonEmbedMessage\_clicked}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{on\_pushButtonEmbedMessage\_clicked}{on\_pushButtonEmbedMessage\_clicked}}
+{\footnotesize\ttfamily \label{class_task_window_a453238f803ba46cc14df6d879962bb67} 
+void Task\+Window\+::on\+\_\+push\+Button\+Embed\+Message\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This function is called when the "{}\+Embed Message"{} button is clicked. It prompts the user to select an image file, enter a message, and choose a location to save the output image. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_a453238f803ba46cc14df6d879962bb67}{TaskWindow::on\_pushButtonEmbedMessage\_clicked}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Embed\ Message\ button\ clicked"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ QString\ imagePath\ =\ QFileDialog::getOpenFileName(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Open\ Image"{}},\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}Images\ (*.png\ *.jpg\ *.bmp)"{}});}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (imagePath.isEmpty())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{bool}\ ok;}
+\DoxyCodeLine{\ \ \ QString\ message\ =\ QInputDialog::getText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Input\ Message"{}},\ \textcolor{stringliteral}{"{}Message:"{}},\ QLineEdit::Normal,\ \textcolor{stringliteral}{"{}"{}},\ \&ok);}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (!ok\ ||\ message.isEmpty())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ QString\ outputPath\ =\ QFileDialog::getSaveFileName(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Save\ Image"{}},\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}Images\ (*.png\ *.jpg\ *.bmp)"{}});}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (outputPath.isEmpty())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_task_window_a60ae3ba21a7eb58e040d2daa6a2207c4}{embedMessageInImage}}(imagePath,\ message,\ outputPath);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::information(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Success"{}},\ \textcolor{stringliteral}{"{}Message\ embedded\ successfully!"{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ e.what());}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_task_window_a03c2753a56a027bcf882d85daee93191}\index{TaskWindow@{TaskWindow}!on\_pushButtonLogout\_clicked@{on\_pushButtonLogout\_clicked}}
+\index{on\_pushButtonLogout\_clicked@{on\_pushButtonLogout\_clicked}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{on\_pushButtonLogout\_clicked}{on\_pushButtonLogout\_clicked}}
+{\footnotesize\ttfamily \label{class_task_window_a03c2753a56a027bcf882d85daee93191} 
+void Task\+Window\+::on\+\_\+push\+Button\+Logout\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This function is called when the "{}\+Logout"{} button is clicked. It emits a logout\+Clicked signal, which can be used by other parts of the application to handle the logout event. It then closes the \doxylink{class_task_window}{Task\+Window}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_a03c2753a56a027bcf882d85daee93191}{TaskWindow::on\_pushButtonLogout\_clicked}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Logout\ button\ clicked"{}};}
+\DoxyCodeLine{\ \ \ \ emit\ \mbox{\hyperlink{class_task_window_aa212f86a9f466c55ddf8ad7983947452}{logoutClicked}}();\ \textcolor{comment}{//\ Испускаем\ сигнал\ для\ выхода}}
+\DoxyCodeLine{\ \ \ \ this-\/>close();\ \textcolor{comment}{//\ Закрываем\ окно\ задач}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_task_window_a5df442edfa67cfb59842035c04d75200}\index{TaskWindow@{TaskWindow}!on\_pushButtonSolveChord\_clicked@{on\_pushButtonSolveChord\_clicked}}
+\index{on\_pushButtonSolveChord\_clicked@{on\_pushButtonSolveChord\_clicked}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{on\_pushButtonSolveChord\_clicked}{on\_pushButtonSolveChord\_clicked}}
+{\footnotesize\ttfamily \label{class_task_window_a5df442edfa67cfb59842035c04d75200} 
+void Task\+Window\+::on\+\_\+push\+Button\+Solve\+Chord\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This function is called when the "{}\+Solve Chord"{} button is clicked. It prompts the user to enter the values of a, b, and the tolerance for the chord method. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_task_window_a5df442edfa67cfb59842035c04d75200}{TaskWindow::on\_pushButtonSolveChord\_clicked}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Solve\ Chord\ button\ clicked"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ ok1,\ ok2,\ ok3;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ a\ =\ QInputDialog::getDouble(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Input"{}},\ \textcolor{stringliteral}{"{}Enter\ a:"{}},\ 0,\ -\/2147483647,\ 2147483647,\ 2,\ \&ok1);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ b\ =\ QInputDialog::getDouble(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Input"{}},\ \textcolor{stringliteral}{"{}Enter\ b:"{}},\ 0,\ -\/2147483647,\ 2147483647,\ 2,\ \&ok2);}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{double}\ tol\ =\ QInputDialog::getDouble(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Input"{}},\ \textcolor{stringliteral}{"{}Enter\ tolerance:"{}},\ 0.001,\ 0,\ 2147483647,\ 3,\ \&ok3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (ok1\ \&\&\ ok2\ \&\&\ ok3)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ result\ =\ \mbox{\hyperlink{chord_8cpp_a2c35463823ccf700e92f318d6170d8f3}{chord\_method}}([](\textcolor{keywordtype}{double}\ x)\ \{\ \textcolor{keywordflow}{return}\ std::cos(x)\ -\/\ x;\ \},\ a,\ b,\ tol);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::information(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Result"{}},\ QString(\textcolor{stringliteral}{"{}The\ root\ is:\ \%1"{}}).arg(result));}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_task_window_ad0dc0440561595c9d3d2dd797c71439f}\index{TaskWindow@{TaskWindow}!ui@{ui}}
+\index{ui@{ui}!TaskWindow@{TaskWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \label{class_task_window_ad0dc0440561595c9d3d2dd797c71439f} 
+Ui\+::\+Task\+Window\texorpdfstring{$\ast$}{*} Task\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{taskwindow_8h}{taskwindow.\+h}}\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{taskwindow_8cpp}{taskwindow.\+cpp}}\end{DoxyCompactItemize}

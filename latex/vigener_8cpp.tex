@@ -1,0 +1,94 @@
+\doxysection{C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/vigener.cpp File Reference}
+\hypertarget{vigener_8cpp}{}\label{vigener_8cpp}\index{C:/Users/User/Documents/GuiApp (2)/src/vigener.cpp@{C:/Users/User/Documents/GuiApp (2)/src/vigener.cpp}}
+{\ttfamily \#include "{}vigener.\+h"{}}\newline
+{\ttfamily \#include $<$QImage$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vigener_8cpp_a256ffd68a170e8eb476fa0ae85b8bce2}{embed\+Message\+In\+Image}} (const std\+::string \&image\+Path, const std\+::string \&message, const std\+::string \&output\+Path)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyItemize}
+\item This function takes an image file path, a message, and an output file path as input. 
+\end{DoxyItemize}\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{vigener_8cpp_a256ffd68a170e8eb476fa0ae85b8bce2}\index{vigener.cpp@{vigener.cpp}!embedMessageInImage@{embedMessageInImage}}
+\index{embedMessageInImage@{embedMessageInImage}!vigener.cpp@{vigener.cpp}}
+\doxysubsubsection{\texorpdfstring{embedMessageInImage()}{embedMessageInImage()}}
+{\footnotesize\ttfamily \label{vigener_8cpp_a256ffd68a170e8eb476fa0ae85b8bce2} 
+void embed\+Message\+In\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{image\+Path}{, }\item[{const std\+::string \&}]{message}{, }\item[{const std\+::string \&}]{output\+Path}{}\end{DoxyParamCaption})}
+
+
+
+
+\begin{DoxyItemize}
+\item This function takes an image file path, a message, and an output file path as input. 
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item It opens the image file and checks if it is valid.
+\item It converts the message string into a vector of bytes, including a null terminator.
+\item It calculates the number of bits required to store the message and compares it to the total number of pixels in the image.
+\item If the message is too large to fit in the image, it throws an exception.
+\item Otherwise, it iterates through each pixel in the image and modifies the least significant bit of each color channel to store the message bits.
+\item Finally, it saves the modified image to the output file path.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{vigener_8cpp_a256ffd68a170e8eb476fa0ae85b8bce2}{embedMessageInImage}}(\textcolor{keyword}{const}\ std::string\ \&imagePath,\ \textcolor{keyword}{const}\ std::string\ \&message,\ \textcolor{keyword}{const}\ std::string\ \&outputPath)\ \{}
+\DoxyCodeLine{QImage\ image(QString::fromStdString(imagePath));}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (image.isNull())\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Could\ not\ open\ or\ find\ the\ image"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::vector<uchar>\ message\_bytes(message.begin(),\ message.end());}
+\DoxyCodeLine{message\_bytes.push\_back(\textcolor{charliteral}{'\(\backslash\)0'});\ \textcolor{comment}{//\ Null-\/terminate\ the\ message}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ message\_bits\ =\ message\_bytes.size()\ *\ 8;}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ image\_pixels\ =\ \textcolor{keyword}{static\_cast<}std::vector<uchar>::size\_type\textcolor{keyword}{>}(image.width()\ *\ image.height()\ *\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (message\_bits\ >\ image\_pixels)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Message\ is\ too\ large\ to\ embed\ in\ the\ image"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::vector<uchar>::size\_type\ bit\_idx\ =\ 0;}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ image.height();\ ++row)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ image.width();\ ++col)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QRgb\ pixel\ =\ image.pixel(col,\ row);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ color\ =\ 0;\ color\ <\ 3;\ ++color)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bit\_idx\ <\ message\_bits)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uchar\ color\_value;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (color)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_value\ =\ qRed(pixel);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_value\ =\ qGreen(pixel);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_value\ =\ qBlue(pixel);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_value\ =\ (color\_value\ \&\ 0xFE)\ |\ ((message\_bytes[bit\_idx\ /\ 8]\ >>\ (bit\_idx\ \%\ 8))\ \&\ 0x01);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pixel\ =\ qRgb((color\ ==\ 0)\ ?\ color\_value\ :\ qRed(pixel),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (color\ ==\ 1)\ ?\ color\_value\ :\ qGreen(pixel),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (color\ ==\ 2)\ ?\ color\_value\ :\ qBlue(pixel));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++bit\_idx;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ image.setPixel(col,\ row,\ pixel);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!image.save(QString::fromStdString(outputPath)))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Could\ not\ save\ the\ image"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

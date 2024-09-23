@@ -1,0 +1,35 @@
+\doxysection{registerwindow.\+h}
+\hypertarget{registerwindow_8h_source}{}\label{registerwindow_8h_source}\index{C:/Users/User/Documents/GuiApp (2)/src/registerwindow.h@{C:/Users/User/Documents/GuiApp (2)/src/registerwindow.h}}
+\mbox{\hyperlink{registerwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REGISTERWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REGISTERWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_register_window}{RegisterWindow}};}
+\DoxyCodeLine{00008\ \}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_register_window}{RegisterWindow}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_register_window_a0afbe90533f73fb296bfd483c3738baf}{RegisterWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_register_window_aaeb4a1dc724077a1c30dc96659371d42}{\string~RegisterWindow}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ signals:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_register_window_af1795d38d22db48e37ed859ca17873f4}{registrationSuccessful}}();\ \textcolor{comment}{//\ Сигнал\ для\ успешной\ регистрации}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_register_window_ad2d9049dff0f5d602697b56e5112bbf3}{on\_pushButtonRegister\_clicked}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_register_window_a0b1ad41f03340202f6c275b38ffe4cea}{on\_pushButtonBack\_clicked}}();\ \textcolor{comment}{//\ Слот\ для\ кнопки\ "{}Back"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ Ui::RegisterWindow\ *\mbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REGISTERWINDOW\_H}}
+
+\end{DoxyCode}

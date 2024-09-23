@@ -1,0 +1,210 @@
+\doxysection{Database Class Reference}
+\hypertarget{class_database}{}\label{class_database}\index{Database@{Database}}
+
+
+{\ttfamily \#include $<$database.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_database_ae83f5078d3494a4ba20521284d7efe79}{open}} ()
+\begin{DoxyCompactList}\small\item\em This method attempts to open the database connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{close}} ()
+\begin{DoxyCompactList}\small\item\em This function closes the database connection if it is currently open. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_database_a518d7be79639a9136489a7f8fc25adb8}{execute\+Query}} (const QString \&query\+Str)
+\begin{DoxyCompactList}\small\item\em This method executes a general SQL query provided as a string. \end{DoxyCompactList}\item 
+QSql\+Query \mbox{\hyperlink{class_database_abed6afab1113ddbf769aa45341a75b91}{execute\+Select\+Query}} (const QString \&query\+Str)
+\begin{DoxyCompactList}\small\item\em This method executes a SQL select query and returns the result as a QSql\+Query object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_database}{Database}} \& \mbox{\hyperlink{class_database_aa04e547554cc34fa4b6c5a9390021eab}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em This function implements the Singleton pattern, ensuring that only one instance of the \doxylink{class_database}{Database} class exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_database_a4703c80e6969d33565ea340f768fdadf}{Database}} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor for the \doxylink{class_database}{Database} class. It initializes a SQLite database connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{\texorpdfstring{$\sim$}{\string~}\+Database}} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the \doxylink{class_database}{Database} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_database_a83f8b6d2941a4aee50f225e08e97291c}{Database}} (const \mbox{\hyperlink{class_database}{Database}} \&)=delete
+\item 
+\mbox{\hyperlink{class_database}{Database}} \& \mbox{\hyperlink{class_database_a46b93a4878076c7cfddd5b4058297f14}{operator=}} (const \mbox{\hyperlink{class_database}{Database}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QSql\+Database \mbox{\hyperlink{class_database_aea64d7d99483faec8f049cdd817bb693}{db}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_database_a4703c80e6969d33565ea340f768fdadf}\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{Database()}{Database()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_database_a4703c80e6969d33565ea340f768fdadf} 
+Database\+::\+Database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the constructor for the \doxylink{class_database}{Database} class. It initializes a SQLite database connection. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_database_a4703c80e6969d33565ea340f768fdadf}{Database::Database}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_database_aea64d7d99483faec8f049cdd817bb693}{db}}\ =\ QSqlDatabase::addDatabase(\textcolor{stringliteral}{"{}QSQLITE"{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_database_aea64d7d99483faec8f049cdd817bb693}{db}}.setDatabaseName(\textcolor{stringliteral}{"{}app\_database.sqlite"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_database_a84d399a2ad58d69daab9b05330e1316d}\index{Database@{Database}!````~Database@{\texorpdfstring{$\sim$}{\string~}Database}}
+\index{````~Database@{\texorpdfstring{$\sim$}{\string~}Database}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Database()}{\string~Database()}}
+{\footnotesize\ttfamily \label{class_database_a84d399a2ad58d69daab9b05330e1316d} 
+Database\+::\texorpdfstring{$\sim$}{\string~}\+Database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the destructor for the \doxylink{class_database}{Database} class. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{Database::\string~Database}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_database_aea64d7d99483faec8f049cdd817bb693}{db}}.isOpen())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_database_aea64d7d99483faec8f049cdd817bb693}{db}}.close();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_database_a83f8b6d2941a4aee50f225e08e97291c}\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{Database()}{Database()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_database_a83f8b6d2941a4aee50f225e08e97291c} 
+Database\+::\+Database (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_database}{Database}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}\index{Database@{Database}!close@{close}}
+\index{close@{close}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{class_database_ab89cb07242f0ab1d4058974bf3e7cf19} 
+void Database\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This function closes the database connection if it is currently open. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{Database::close}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_database_aea64d7d99483faec8f049cdd817bb693}{db}}.close();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_database_a518d7be79639a9136489a7f8fc25adb8}\index{Database@{Database}!executeQuery@{executeQuery}}
+\index{executeQuery@{executeQuery}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{executeQuery()}{executeQuery()}}
+{\footnotesize\ttfamily \label{class_database_a518d7be79639a9136489a7f8fc25adb8} 
+bool Database\+::execute\+Query (\begin{DoxyParamCaption}\item[{const QString \&}]{query\+Str}{}\end{DoxyParamCaption})}
+
+
+
+This method executes a general SQL query provided as a string. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_a518d7be79639a9136489a7f8fc25adb8}{Database::executeQuery}}(\textcolor{keyword}{const}\ QString\ \&queryStr)\ \{}
+\DoxyCodeLine{\ \ \ \ QSqlQuery\ query;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!query.exec(queryStr))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Error\ executing\ query:\ "{}}\ <<\ query.lastError();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_database_abed6afab1113ddbf769aa45341a75b91}\index{Database@{Database}!executeSelectQuery@{executeSelectQuery}}
+\index{executeSelectQuery@{executeSelectQuery}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{executeSelectQuery()}{executeSelectQuery()}}
+{\footnotesize\ttfamily \label{class_database_abed6afab1113ddbf769aa45341a75b91} 
+QSql\+Query Database\+::execute\+Select\+Query (\begin{DoxyParamCaption}\item[{const QString \&}]{query\+Str}{}\end{DoxyParamCaption})}
+
+
+
+This method executes a SQL select query and returns the result as a QSql\+Query object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QSqlQuery\ \mbox{\hyperlink{class_database_abed6afab1113ddbf769aa45341a75b91}{Database::executeSelectQuery}}(\textcolor{keyword}{const}\ QString\ \&queryStr)\ \{}
+\DoxyCodeLine{\ \ \ \ QSqlQuery\ query;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!query.exec(queryStr))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Error\ executing\ select\ query:\ "{}}\ <<\ query.lastError();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ query;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_database_aa04e547554cc34fa4b6c5a9390021eab}\index{Database@{Database}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_database_aa04e547554cc34fa4b6c5a9390021eab} 
+\mbox{\hyperlink{class_database}{Database}} \& Database\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function implements the Singleton pattern, ensuring that only one instance of the \doxylink{class_database}{Database} class exists. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_database}{Database}}\&\ \mbox{\hyperlink{class_database_aa04e547554cc34fa4b6c5a9390021eab}{Database::getInstance}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_database}{Database}}\ instance;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_database_ae83f5078d3494a4ba20521284d7efe79}\index{Database@{Database}!open@{open}}
+\index{open@{open}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \label{class_database_ae83f5078d3494a4ba20521284d7efe79} 
+bool Database\+::open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This method attempts to open the database connection. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_ae83f5078d3494a4ba20521284d7efe79}{Database::open}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_database_aea64d7d99483faec8f049cdd817bb693}{db}}.open())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Error:\ connection\ with\ database\ failed"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Database:\ connection\ ok"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_database_a46b93a4878076c7cfddd5b4058297f14}\index{Database@{Database}!operator=@{operator=}}
+\index{operator=@{operator=}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_database_a46b93a4878076c7cfddd5b4058297f14} 
+\mbox{\hyperlink{class_database}{Database}} \& Database\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_database}{Database}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_database_aea64d7d99483faec8f049cdd817bb693}\index{Database@{Database}!db@{db}}
+\index{db@{db}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{class_database_aea64d7d99483faec8f049cdd817bb693} 
+QSql\+Database Database\+::db\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{database_8h}{database.\+h}}\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{database_8cpp}{database.\+cpp}}\end{DoxyCompactItemize}

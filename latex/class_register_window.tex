@@ -1,0 +1,161 @@
+\doxysection{Register\+Window Class Reference}
+\hypertarget{class_register_window}{}\label{class_register_window}\index{RegisterWindow@{RegisterWindow}}
+
+
+{\ttfamily \#include $<$registerwindow.\+h$>$}
+
+Inheritance diagram for Register\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_register_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_register_window_af1795d38d22db48e37ed859ca17873f4}{registration\+Successful}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_register_window_a0afbe90533f73fb296bfd483c3738baf}{Register\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em This is the constructor for the \doxylink{class_register_window}{Register\+Window} class, which is a subclass of QDialog. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_register_window_aaeb4a1dc724077a1c30dc96659371d42}{\texorpdfstring{$\sim$}{\string~}\+Register\+Window}} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the \doxylink{class_register_window}{Register\+Window} class. It deletes the ui member variable, which is a pointer to the user interface object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_register_window_ad2d9049dff0f5d602697b56e5112bbf3}{on\+\_\+push\+Button\+Register\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em This is a slot function that is called when the "{}\+Register"{} button is clicked. It retrieves the username and password entered by the user from the corresponding line edit widgets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_register_window_a0b1ad41f03340202f6c275b38ffe4cea}{on\+\_\+push\+Button\+Back\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em This is a slot function that is called when the "{}\+Back"{} button is clicked. It closes the \doxylink{class_register_window}{Register\+Window} by calling the close() method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Register\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_register_window_a0afbe90533f73fb296bfd483c3738baf}\index{RegisterWindow@{RegisterWindow}!RegisterWindow@{RegisterWindow}}
+\index{RegisterWindow@{RegisterWindow}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{RegisterWindow()}{RegisterWindow()}}
+{\footnotesize\ttfamily \label{class_register_window_a0afbe90533f73fb296bfd483c3738baf} 
+Register\+Window\+::\+Register\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+This is the constructor for the \doxylink{class_register_window}{Register\+Window} class, which is a subclass of QDialog. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_register_window_a0afbe90533f73fb296bfd483c3738baf}{RegisterWindow::RegisterWindow}}(QWidget\ *parent)\ :}
+\DoxyCodeLine{QDialog(parent),}
+\DoxyCodeLine{\mbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}}(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_register_window}{RegisterWindow}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ connect(ui-\/>pushButtonBack,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_register_window_a0b1ad41f03340202f6c275b38ffe4cea}{RegisterWindow::on\_pushButtonBack\_clicked}});\ \textcolor{comment}{//\ Подключаем\ кнопку\ "{}Back"{}\ к\ слоту}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+ \Hypertarget{class_register_window_aaeb4a1dc724077a1c30dc96659371d42}\index{RegisterWindow@{RegisterWindow}!````~RegisterWindow@{\texorpdfstring{$\sim$}{\string~}RegisterWindow}}
+\index{````~RegisterWindow@{\texorpdfstring{$\sim$}{\string~}RegisterWindow}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RegisterWindow()}{\string~RegisterWindow()}}
+{\footnotesize\ttfamily \label{class_register_window_aaeb4a1dc724077a1c30dc96659371d42} 
+Register\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Register\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This is the destructor for the \doxylink{class_register_window}{Register\+Window} class. It deletes the ui member variable, which is a pointer to the user interface object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_register_window_aaeb4a1dc724077a1c30dc96659371d42}{RegisterWindow::\string~RegisterWindow}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_register_window_a0b1ad41f03340202f6c275b38ffe4cea}\index{RegisterWindow@{RegisterWindow}!on\_pushButtonBack\_clicked@{on\_pushButtonBack\_clicked}}
+\index{on\_pushButtonBack\_clicked@{on\_pushButtonBack\_clicked}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{on\_pushButtonBack\_clicked}{on\_pushButtonBack\_clicked}}
+{\footnotesize\ttfamily \label{class_register_window_a0b1ad41f03340202f6c275b38ffe4cea} 
+void Register\+Window\+::on\+\_\+push\+Button\+Back\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This is a slot function that is called when the "{}\+Back"{} button is clicked. It closes the \doxylink{class_register_window}{Register\+Window} by calling the close() method. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_register_window_a0b1ad41f03340202f6c275b38ffe4cea}{RegisterWindow::on\_pushButtonBack\_clicked}}()\ \{}
+\DoxyCodeLine{this-\/>close();\ \textcolor{comment}{//\ Закрываем\ окно\ регистрации\ при\ нажатии\ кнопки\ "{}Back"{}}}
+\DoxyCodeLine{QWidget*\ parent\ =\ this-\/>parentWidget();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (parent)\ \{}
+\DoxyCodeLine{\ \ \ \ parent-\/>show();\ \textcolor{comment}{//\ Показываем\ родительское\ окно}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_register_window_ad2d9049dff0f5d602697b56e5112bbf3}\index{RegisterWindow@{RegisterWindow}!on\_pushButtonRegister\_clicked@{on\_pushButtonRegister\_clicked}}
+\index{on\_pushButtonRegister\_clicked@{on\_pushButtonRegister\_clicked}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{on\_pushButtonRegister\_clicked}{on\_pushButtonRegister\_clicked}}
+{\footnotesize\ttfamily \label{class_register_window_ad2d9049dff0f5d602697b56e5112bbf3} 
+void Register\+Window\+::on\+\_\+push\+Button\+Register\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This is a slot function that is called when the "{}\+Register"{} button is clicked. It retrieves the username and password entered by the user from the corresponding line edit widgets. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_register_window_ad2d9049dff0f5d602697b56e5112bbf3}{RegisterWindow::on\_pushButtonRegister\_clicked}}()\ \{}
+\DoxyCodeLine{\ qDebug()\ <<\ \textcolor{stringliteral}{"{}Register\ button\ clicked"{}};}
+\DoxyCodeLine{\ QString\ username\ =\ \mbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}}-\/>lineEditUsername-\/>text();}
+\DoxyCodeLine{\ QString\ password\ =\ \mbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}}-\/>lineEditPassword-\/>text();}
+\DoxyCodeLine{\ }
+\DoxyCodeLine{\ \textcolor{keywordflow}{if}\ (username.isEmpty()\ ||\ password.isEmpty())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ QMessageBox::warning(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Registration"{}},\ \textcolor{stringliteral}{"{}Please\ fill\ in\ all\ fields"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \ \}}
+\DoxyCodeLine{\ }
+\DoxyCodeLine{\ \mbox{\hyperlink{class_database}{Database}}\&\ db\ =\ \mbox{\hyperlink{class_database_aa04e547554cc34fa4b6c5a9390021eab}{Database::getInstance}}();}
+\DoxyCodeLine{\ db.\mbox{\hyperlink{class_database_ae83f5078d3494a4ba20521284d7efe79}{open}}();}
+\DoxyCodeLine{\ QString\ queryStr\ =\ QString(\textcolor{stringliteral}{"{}INSERT\ INTO\ users\ (username,\ password)\ VALUES\ ('\%1',\ '\%2')"{}})}
+\DoxyCodeLine{\ .arg(username).arg(password);}
+\DoxyCodeLine{\ \textcolor{keywordflow}{if}\ (db.\mbox{\hyperlink{class_database_a518d7be79639a9136489a7f8fc25adb8}{executeQuery}}(queryStr))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ QMessageBox::information(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Registration"{}},\ \textcolor{stringliteral}{"{}User\ registered\ successfully"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_register_window_af1795d38d22db48e37ed859ca17873f4}{registrationSuccessful}}();\ \textcolor{comment}{//\ Испускаем\ сигнал}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ this-\/>close();\ \textcolor{comment}{//\ Закрываем\ окно\ регистрации\ после\ успешной\ регистрации}}
+\DoxyCodeLine{\ \ \ \ \ \}}
+\DoxyCodeLine{\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ QMessageBox::warning(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Registration"{}},\ \textcolor{stringliteral}{"{}Failed\ to\ register\ user"{}});}
+\DoxyCodeLine{\ \ \ \ \ \}}
+\DoxyCodeLine{\ db.\mbox{\hyperlink{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{close}}();}
+\DoxyCodeLine{\ \}}
+
+\end{DoxyCode}
+ \Hypertarget{class_register_window_af1795d38d22db48e37ed859ca17873f4}\index{RegisterWindow@{RegisterWindow}!registrationSuccessful@{registrationSuccessful}}
+\index{registrationSuccessful@{registrationSuccessful}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{registrationSuccessful}{registrationSuccessful}}
+{\footnotesize\ttfamily \label{class_register_window_af1795d38d22db48e37ed859ca17873f4} 
+void Register\+Window\+::registration\+Successful (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_register_window_a5d3564e1c9436435a5a158073e15198c}\index{RegisterWindow@{RegisterWindow}!ui@{ui}}
+\index{ui@{ui}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \label{class_register_window_a5d3564e1c9436435a5a158073e15198c} 
+Ui\+::\+Register\+Window\texorpdfstring{$\ast$}{*} Register\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{registerwindow_8h}{registerwindow.\+h}}\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{registerwindow_8cpp}{registerwindow.\+cpp}}\end{DoxyCompactItemize}

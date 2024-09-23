@@ -1,0 +1,184 @@
+\doxysection{Login\+Window Class Reference}
+\hypertarget{class_login_window}{}\label{class_login_window}\index{LoginWindow@{LoginWindow}}
+
+
+{\ttfamily \#include $<$loginwindow.\+h$>$}
+
+Inheritance diagram for Login\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_login_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_login_window_a10c7b94abf87687a46e8ff8c78f33c00}{login\+Successful}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_login_window_aa4c04d26b299de00156bbf3c32b2a082}{Login\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em This is the constructor for the {\ttfamily \doxylink{class_login_window}{Login\+Window}} class. It initializes the user interface and connects the "{}\+Back"{} button to its corresponding slot, allowing the user to navigate back to the previous window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_login_window_a0c49fe788dcce29aa50e7d974e1ad158}{\texorpdfstring{$\sim$}{\string~}\+Login\+Window}} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the {\ttfamily \doxylink{class_login_window}{Login\+Window}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_login_window_ad797f6247bb6bd583e70c307ee93864d}{on\+\_\+push\+Button\+Login\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em This function is triggered when the "{}\+Login"{} button is clicked. It retrieves the username and password input, checks for empty fields, and attempts to authenticate the user against the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_login_window_ac53500c3780e0c7d9881bd0cd59d8081}{on\+\_\+push\+Button\+Register\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Example function\+: This function is executed when the "{}\+Register"{} button is clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_login_window_a01c34915f9ac1d2f18547b62b7752568}{on\+\_\+push\+Button\+Back\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em This function is triggered when the "{}\+Back"{} button is clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Login\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_a583f5c7dda98acd3e65791101f9ff2a0}{ui}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_login_window_aa4c04d26b299de00156bbf3c32b2a082}\index{LoginWindow@{LoginWindow}!LoginWindow@{LoginWindow}}
+\index{LoginWindow@{LoginWindow}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{LoginWindow()}{LoginWindow()}}
+{\footnotesize\ttfamily \label{class_login_window_aa4c04d26b299de00156bbf3c32b2a082} 
+Login\+Window\+::\+Login\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+This is the constructor for the {\ttfamily \doxylink{class_login_window}{Login\+Window}} class. It initializes the user interface and connects the "{}\+Back"{} button to its corresponding slot, allowing the user to navigate back to the previous window. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_login_window_aa4c04d26b299de00156bbf3c32b2a082}{LoginWindow::LoginWindow}}(QWidget\ *parent)\ :}
+\DoxyCodeLine{QDialog(parent),}
+\DoxyCodeLine{\mbox{\hyperlink{class_login_window_a583f5c7dda98acd3e65791101f9ff2a0}{ui}}(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_login_window}{LoginWindow}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ connect(ui-\/>pushButtonBack,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_login_window_a01c34915f9ac1d2f18547b62b7752568}{LoginWindow::on\_pushButtonBack\_clicked}});\ \textcolor{comment}{//\ Подключаем\ кнопку\ "{}Back"{}\ к\ слоту}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+ \Hypertarget{class_login_window_a0c49fe788dcce29aa50e7d974e1ad158}\index{LoginWindow@{LoginWindow}!````~LoginWindow@{\texorpdfstring{$\sim$}{\string~}LoginWindow}}
+\index{````~LoginWindow@{\texorpdfstring{$\sim$}{\string~}LoginWindow}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LoginWindow()}{\string~LoginWindow()}}
+{\footnotesize\ttfamily \label{class_login_window_a0c49fe788dcce29aa50e7d974e1ad158} 
+Login\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Login\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This is the destructor for the {\ttfamily \doxylink{class_login_window}{Login\+Window}} class. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_login_window_a0c49fe788dcce29aa50e7d974e1ad158}{LoginWindow::\string~LoginWindow}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_login_window_a583f5c7dda98acd3e65791101f9ff2a0}{ui}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_login_window_a10c7b94abf87687a46e8ff8c78f33c00}\index{LoginWindow@{LoginWindow}!loginSuccessful@{loginSuccessful}}
+\index{loginSuccessful@{loginSuccessful}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{loginSuccessful}{loginSuccessful}}
+{\footnotesize\ttfamily \label{class_login_window_a10c7b94abf87687a46e8ff8c78f33c00} 
+void Login\+Window\+::login\+Successful (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_login_window_a01c34915f9ac1d2f18547b62b7752568}\index{LoginWindow@{LoginWindow}!on\_pushButtonBack\_clicked@{on\_pushButtonBack\_clicked}}
+\index{on\_pushButtonBack\_clicked@{on\_pushButtonBack\_clicked}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{on\_pushButtonBack\_clicked}{on\_pushButtonBack\_clicked}}
+{\footnotesize\ttfamily \label{class_login_window_a01c34915f9ac1d2f18547b62b7752568} 
+void Login\+Window\+::on\+\_\+push\+Button\+Back\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This function is triggered when the "{}\+Back"{} button is clicked. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_a01c34915f9ac1d2f18547b62b7752568}{LoginWindow::on\_pushButtonBack\_clicked}}()\ \{}
+\DoxyCodeLine{this-\/>close();\ \textcolor{comment}{//\ Закрываем\ окно\ входа\ при\ нажатии\ кнопки\ "{}Back"{}}}
+\DoxyCodeLine{QWidget*\ parent\ =\ this-\/>parentWidget();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (parent)\ \{}
+\DoxyCodeLine{\ \ \ \ parent-\/>show();\ \textcolor{comment}{//\ Показываем\ родительское\ окно}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_login_window_ad797f6247bb6bd583e70c307ee93864d}\index{LoginWindow@{LoginWindow}!on\_pushButtonLogin\_clicked@{on\_pushButtonLogin\_clicked}}
+\index{on\_pushButtonLogin\_clicked@{on\_pushButtonLogin\_clicked}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{on\_pushButtonLogin\_clicked}{on\_pushButtonLogin\_clicked}}
+{\footnotesize\ttfamily \label{class_login_window_ad797f6247bb6bd583e70c307ee93864d} 
+void Login\+Window\+::on\+\_\+push\+Button\+Login\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This function is triggered when the "{}\+Login"{} button is clicked. It retrieves the username and password input, checks for empty fields, and attempts to authenticate the user against the database. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_ad797f6247bb6bd583e70c307ee93864d}{LoginWindow::on\_pushButtonLogin\_clicked}}()\ \{}
+\DoxyCodeLine{qDebug()\ <<\ \textcolor{stringliteral}{"{}Login\ button\ clicked"{}};}
+\DoxyCodeLine{QString\ username\ =\ \mbox{\hyperlink{class_login_window_a583f5c7dda98acd3e65791101f9ff2a0}{ui}}-\/>lineEditUsername-\/>text();}
+\DoxyCodeLine{QString\ password\ =\ \mbox{\hyperlink{class_login_window_a583f5c7dda98acd3e65791101f9ff2a0}{ui}}-\/>lineEditPassword-\/>text();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (username.isEmpty()\ ||\ password.isEmpty())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::warning(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Login"{}},\ \textcolor{stringliteral}{"{}Please\ fill\ in\ all\ fields"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{class_database}{Database}}\&\ db\ =\ \mbox{\hyperlink{class_database_aa04e547554cc34fa4b6c5a9390021eab}{Database::getInstance}}();}
+\DoxyCodeLine{db.\mbox{\hyperlink{class_database_ae83f5078d3494a4ba20521284d7efe79}{open}}();}
+\DoxyCodeLine{QString\ queryStr\ =\ QString(\textcolor{stringliteral}{"{}SELECT\ *\ FROM\ users\ WHERE\ username='\%1'\ AND\ password='\%2'"{}})}
+\DoxyCodeLine{.arg(username).arg(password);}
+\DoxyCodeLine{QSqlQuery\ query\ =\ db.\mbox{\hyperlink{class_database_abed6afab1113ddbf769aa45341a75b91}{executeSelectQuery}}(queryStr);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (query.next())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::information(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Login"{}},\ \textcolor{stringliteral}{"{}Login\ successful"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_login_window_a10c7b94abf87687a46e8ff8c78f33c00}{loginSuccessful}}();\ \textcolor{comment}{//\ Испускаем\ сигнал}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::warning(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Login"{}},\ \textcolor{stringliteral}{"{}Invalid\ username\ or\ password"{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{db.\mbox{\hyperlink{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{close}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_login_window_ac53500c3780e0c7d9881bd0cd59d8081}\index{LoginWindow@{LoginWindow}!on\_pushButtonRegister\_clicked@{on\_pushButtonRegister\_clicked}}
+\index{on\_pushButtonRegister\_clicked@{on\_pushButtonRegister\_clicked}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{on\_pushButtonRegister\_clicked}{on\_pushButtonRegister\_clicked}}
+{\footnotesize\ttfamily \label{class_login_window_ac53500c3780e0c7d9881bd0cd59d8081} 
+void Login\+Window\+::on\+\_\+push\+Button\+Register\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Example function\+: This function is executed when the "{}\+Register"{} button is clicked. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_ac53500c3780e0c7d9881bd0cd59d8081}{LoginWindow::on\_pushButtonRegister\_clicked}}()\ \{}
+\DoxyCodeLine{\mbox{\hyperlink{class_register_window}{RegisterWindow}}\ registerWindow(\textcolor{keyword}{this});}
+\DoxyCodeLine{connect(\&registerWindow,\ \&RegisterWindow::destroyed,\ this-\/>parentWidget(),\ \&QWidget::show);\ \textcolor{comment}{//\ Показываем\ главное\ окно\ после\ закрытия\ окна\ регистрации}}
+\DoxyCodeLine{this-\/>hide();\ \textcolor{comment}{//\ Скрываем\ окно\ входа}}
+\DoxyCodeLine{registerWindow.exec();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_login_window_a583f5c7dda98acd3e65791101f9ff2a0}\index{LoginWindow@{LoginWindow}!ui@{ui}}
+\index{ui@{ui}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \label{class_login_window_a583f5c7dda98acd3e65791101f9ff2a0} 
+Ui\+::\+Login\+Window\texorpdfstring{$\ast$}{*} Login\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{loginwindow_8h}{loginwindow.\+h}}\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{loginwindow_8cpp}{loginwindow.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,58 @@
+\doxysection{C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/functionsforserver.h File Reference}
+\hypertarget{functionsforserver_8h}{}\label{functionsforserver_8h}\index{C:/Users/User/Documents/GuiApp (2)/src/functionsforserver.h@{C:/Users/User/Documents/GuiApp (2)/src/functionsforserver.h}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{functionsforserver_8h_a0ce4d0d659a2fe4f96344915dcf4b1f8}{chord\+\_\+method}} (double(\texorpdfstring{$\ast$}{*}f)(double), double a, double b, double tol=1e-\/10)
+\begin{DoxyCompactList}\small\item\em The function calculates the root value starting from two initial approximations {\ttfamily a} and {\ttfamily b} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{functionsforserver_8h_abe144a185e0333decb346e063c54298e}{some\+\_\+function}} (double x)
+\begin{DoxyCompactList}\small\item\em Example function\+: x\texorpdfstring{$^\wedge$}{\string^}2 -\/ 2 = 0 (solution\+: sqrt(2)) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{functionsforserver_8h_a0ce4d0d659a2fe4f96344915dcf4b1f8}\index{functionsforserver.h@{functionsforserver.h}!chord\_method@{chord\_method}}
+\index{chord\_method@{chord\_method}!functionsforserver.h@{functionsforserver.h}}
+\doxysubsubsection{\texorpdfstring{chord\_method()}{chord\_method()}}
+{\footnotesize\ttfamily \label{functionsforserver_8h_a0ce4d0d659a2fe4f96344915dcf4b1f8} 
+double chord\+\_\+method (\begin{DoxyParamCaption}\item[{double(\texorpdfstring{$\ast$}{*}}]{f~}{)(double), }\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{tol}{}\end{DoxyParamCaption})}
+
+
+
+The function calculates the root value starting from two initial approximations {\ttfamily a} and {\ttfamily b} 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ \mbox{\hyperlink{chord_8cpp_a2c35463823ccf700e92f318d6170d8f3}{chord\_method}}(\textcolor{keywordtype}{double}\ (*f)(\textcolor{keywordtype}{double}),\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ tol)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ fa\ =\ f(a);}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ fb\ =\ f(b);}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ c\ =\ a;}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (fabs(b\ -\/\ a)\ >\ tol)\ \{}
+\DoxyCodeLine{\ \ \ c\ =\ b\ -\/\ fb\ *\ (b\ -\/\ a)\ /\ (fb\ -\/\ fa);}
+\DoxyCodeLine{\ \ \ a\ =\ b;}
+\DoxyCodeLine{\ \ \ fa\ =\ fb;}
+\DoxyCodeLine{\ \ \ b\ =\ c;}
+\DoxyCodeLine{\ \ \ fb\ =\ f(b);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{functionsforserver_8h_abe144a185e0333decb346e063c54298e}\index{functionsforserver.h@{functionsforserver.h}!some\_function@{some\_function}}
+\index{some\_function@{some\_function}!functionsforserver.h@{functionsforserver.h}}
+\doxysubsubsection{\texorpdfstring{some\_function()}{some\_function()}}
+{\footnotesize\ttfamily \label{functionsforserver_8h_abe144a185e0333decb346e063c54298e} 
+double some\+\_\+function (\begin{DoxyParamCaption}\item[{double}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Example function\+: x\texorpdfstring{$^\wedge$}{\string^}2 -\/ 2 = 0 (solution\+: sqrt(2)) 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ \mbox{\hyperlink{functionsforserver_8cpp_abe144a185e0333decb346e063c54298e}{some\_function}}(\textcolor{keywordtype}{double}\ x)\ \{}
+\DoxyCodeLine{\textcolor{keywordflow}{return}\ x\ *\ x\ -\/\ 2;\ \textcolor{comment}{//\ Пример\ функции:\ x\string^2\ -\/\ 2\ =\ 0\ (решение:\ sqrt(2))}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,189 @@
+\doxysection{Server Class Reference}
+\hypertarget{class_server}{}\label{class_server}\index{Server@{Server}}
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+Inheritance diagram for Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_server}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_aaf98d5194faee831c6340cc736b9b879}{Server}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em This is the constructor for the {\ttfamily \doxylink{class_server}{Server}} class, which inherits from the {\ttfamily QTcp\+Server} class. The constructor takes a {\ttfamily QObject} pointer as a parent parameter and calls the constructor of the base class {\ttfamily QTcp\+Server}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_server_aa229a1587514197693274aa0d589344b}{incoming\+Connection}} (qintptr socket\+Descriptor) override
+\begin{DoxyCompactList}\small\item\em This function is called when a new client connection is established. It creates a new {\ttfamily QTcp\+Socket} object, sets the socket descriptor, and connects the {\ttfamily ready\+Read} and {\ttfamily disconnected} signals to the corresponding slots. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_server_aae12899ce0d35f0e36b88bd3a44b8e3a}{load\+Users}} ()
+\begin{DoxyCompactList}\small\item\em This function is responsible for loading user information from a file named "{}users.\+txt"{}. It opens the file in read-\/only mode, reads each line, and splits it into a username and password. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_server_a3a488059930a87015e5e918cbf2ba35e}{save\+User}} (const QString \&username, const QString \&password)
+\begin{DoxyCompactList}\small\item\em This function is used to save a new user\textquotesingle{}s information to the "{}users.\+txt"{} file. It opens the file in append mode and writes the username and password to a new line, separated by a comma. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_server_ac67d866fb14c4644acd1098bacfadeee}{on\+Ready\+Read}} ()
+\begin{DoxyCompactList}\small\item\em This function is called when data is available to be read from a client socket. It retrieves the socket object that emitted the {\ttfamily ready\+Read} signal, reads the data, and parses the JSON data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QHash$<$ QString, QString $>$ \mbox{\hyperlink{class_server_a91d6ce1d73587fb46fb6f31f256bcc84}{users}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_server_aaf98d5194faee831c6340cc736b9b879}\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily \label{class_server_aaf98d5194faee831c6340cc736b9b879} 
+Server\+::\+Server (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+This is the constructor for the {\ttfamily \doxylink{class_server}{Server}} class, which inherits from the {\ttfamily QTcp\+Server} class. The constructor takes a {\ttfamily QObject} pointer as a parent parameter and calls the constructor of the base class {\ttfamily QTcp\+Server}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_server_aaf98d5194faee831c6340cc736b9b879}{Server::Server}}(QObject\ *parent)\ :\ QTcpServer(parent)\ \{}
+\DoxyCodeLine{loadUsers();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_server_aa229a1587514197693274aa0d589344b}\index{Server@{Server}!incomingConnection@{incomingConnection}}
+\index{incomingConnection@{incomingConnection}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{incomingConnection()}{incomingConnection()}}
+{\footnotesize\ttfamily \label{class_server_aa229a1587514197693274aa0d589344b} 
+void Server\+::incoming\+Connection (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+This function is called when a new client connection is established. It creates a new {\ttfamily QTcp\+Socket} object, sets the socket descriptor, and connects the {\ttfamily ready\+Read} and {\ttfamily disconnected} signals to the corresponding slots. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_aa229a1587514197693274aa0d589344b}{Server::incomingConnection}}(qintptr\ socketDescriptor)\ \{}
+\DoxyCodeLine{QTcpSocket*\ socket\ =\ \textcolor{keyword}{new}\ QTcpSocket(\textcolor{keyword}{this});}
+\DoxyCodeLine{socket-\/>setSocketDescriptor(socketDescriptor);}
+\DoxyCodeLine{connect(socket,\ \&QTcpSocket::readyRead,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_server_ac67d866fb14c4644acd1098bacfadeee}{Server::onReadyRead}});}
+\DoxyCodeLine{connect(socket,\ \&QTcpSocket::disconnected,\ socket,\ \&QTcpSocket::deleteLater);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_server_aae12899ce0d35f0e36b88bd3a44b8e3a}\index{Server@{Server}!loadUsers@{loadUsers}}
+\index{loadUsers@{loadUsers}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{loadUsers()}{loadUsers()}}
+{\footnotesize\ttfamily \label{class_server_aae12899ce0d35f0e36b88bd3a44b8e3a} 
+void Server\+::load\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This function is responsible for loading user information from a file named "{}users.\+txt"{}. It opens the file in read-\/only mode, reads each line, and splits it into a username and password. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_aae12899ce0d35f0e36b88bd3a44b8e3a}{Server::loadUsers}}()\ \{}
+\DoxyCodeLine{QFile\ file(\textcolor{stringliteral}{"{}users.txt"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (file.open(QIODevice::ReadOnly\ |\ QIODevice::Text))\ \{}
+\DoxyCodeLine{\ \ \ \ QTextStream\ in(\&file);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (!in.atEnd())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QString\ line\ =\ in.readLine();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QStringList\ parts\ =\ line.split(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parts.size()\ ==\ 2)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_server_a91d6ce1d73587fb46fb6f31f256bcc84}{users}}.insert(parts[0],\ parts[1]);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_server_ac67d866fb14c4644acd1098bacfadeee}\index{Server@{Server}!onReadyRead@{onReadyRead}}
+\index{onReadyRead@{onReadyRead}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{onReadyRead()}{onReadyRead()}}
+{\footnotesize\ttfamily \label{class_server_ac67d866fb14c4644acd1098bacfadeee} 
+void Server\+::on\+Ready\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This function is called when data is available to be read from a client socket. It retrieves the socket object that emitted the {\ttfamily ready\+Read} signal, reads the data, and parses the JSON data. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_ac67d866fb14c4644acd1098bacfadeee}{Server::onReadyRead}}()\ \{}
+\DoxyCodeLine{QTcpSocket*\ socket\ =\ qobject\_cast<QTcpSocket*>(sender());}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (socket)\ \{}
+\DoxyCodeLine{\ \ \ \ QByteArray\ data\ =\ socket-\/>readAll();}
+\DoxyCodeLine{\ \ \ \ QJsonDocument\ doc\ =\ QJsonDocument::fromJson(data);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!doc.isNull())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QJsonObject\ json\ =\ doc.object();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QString\ type\ =\ json[\textcolor{stringliteral}{"{}type"{}}].toString();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}login"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ QString\ username\ =\ json[\textcolor{stringliteral}{"{}username"{}}].toString();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ QString\ password\ =\ json[\textcolor{stringliteral}{"{}password"{}}].toString();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_server_a91d6ce1d73587fb46fb6f31f256bcc84}{users}}.contains(username)\ \&\&\ \mbox{\hyperlink{class_server_a91d6ce1d73587fb46fb6f31f256bcc84}{users}}.value(username)\ ==\ password)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ socket-\/>write(\textcolor{stringliteral}{"{}login-\/success\(\backslash\)n"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ socket-\/>write(\textcolor{stringliteral}{"{}login-\/fail\(\backslash\)n"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}register"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ QString\ username\ =\ json[\textcolor{stringliteral}{"{}username"{}}].toString();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_server_a91d6ce1d73587fb46fb6f31f256bcc84}{users}}.contains(username))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_server_a91d6ce1d73587fb46fb6f31f256bcc84}{users}}.insert(username,\ password);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_server_a3a488059930a87015e5e918cbf2ba35e}{saveUser}}(username,\ password);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ socket-\/>write(\textcolor{stringliteral}{"{}register-\/success\(\backslash\)n"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ socket-\/>write(\textcolor{stringliteral}{"{}register-\/fail\(\backslash\)n"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_server_a3a488059930a87015e5e918cbf2ba35e}\index{Server@{Server}!saveUser@{saveUser}}
+\index{saveUser@{saveUser}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{saveUser()}{saveUser()}}
+{\footnotesize\ttfamily \label{class_server_a3a488059930a87015e5e918cbf2ba35e} 
+void Server\+::save\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This function is used to save a new user\textquotesingle{}s information to the "{}users.\+txt"{} file. It opens the file in append mode and writes the username and password to a new line, separated by a comma. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a3a488059930a87015e5e918cbf2ba35e}{Server::saveUser}}(\textcolor{keyword}{const}\ QString\ \&username,\ \textcolor{keyword}{const}\ QString\ \&password)\ \{}
+\DoxyCodeLine{QFile\ file(\textcolor{stringliteral}{"{}users.txt"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (file.open(QIODevice::Append\ |\ QIODevice::Text))\ \{}
+\DoxyCodeLine{\ \ \ \ QTextStream\ out(\&file);}
+\DoxyCodeLine{\ \ \ \ out\ <<\ username\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ password\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_server_a91d6ce1d73587fb46fb6f31f256bcc84}\index{Server@{Server}!users@{users}}
+\index{users@{users}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{users}{users}}
+{\footnotesize\ttfamily \label{class_server_a91d6ce1d73587fb46fb6f31f256bcc84} 
+QHash$<$QString, QString$>$ Server\+::users\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{server_8h}{server.\+h}}\item 
+C\+:/\+Users/\+User/\+Documents/\+Gui\+App (2)/src/\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}
